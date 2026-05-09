@@ -1,7 +1,6 @@
 # 🛡️ Pipeline de Dados para Detecção de Phishing: ML vs Deep Learning
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.style=for-the-badge&logo=pandas&logoColor=white)
 ![Academic Project](https://img.shields.io/badge/Status-Pesquisa%20Ativa-success?style=for-the-badge)
 
 ## 📌 Sobre o Projeto

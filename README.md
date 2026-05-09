@@ -1,10 +1,30 @@
 # 🛡️ Pipeline Temporal para Detecção de Phishing
 
+<div align="center">
+
+## 👨‍💻 Sérgio Silva de Oliveira
+
+Estudante de Ciência da Computação — IFCE Campus Iguatu
+
+Pesquisador com foco em:
+
+🔹 Deep Learning  
+🔹 Segurança Cibernética  
+🔹 Detecção de Phishing  
+🔹 Robustez Adversarial  
+🔹 Machine Learning Aplicado  
+
+<br>
+
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Artificial Intelligence](https://img.shields.io/badge/Artificial%20Intelligence-Research-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)
 ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Phishing%20Detection-DC143C?style=for-the-badge&logo=protonmail&logoColor=white)
 ![Data Engineering](https://img.shields.io/badge/Data%20Engineering-Benchmark%20Pipeline-FF8C00?style=for-the-badge&logo=databricks&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active%20Research-228B22?style=for-the-badge)
+
+</div>
+
+---
 
 > **Framework Experimental Reproduzível para Pesquisa em Detecção de URLs Maliciosas, Robustez Temporal e IA Adversarial.**
 
@@ -109,6 +129,7 @@ As URLs sintéticas representam aproximadamente **0.4%** do conjunto final de te
 Essa baixa proporção foi intencionalmente adotada para simular o comportamento real da web, onde ataques adversariais sofisticados representam uma pequena fração do tráfego total, funcionando como uma "agulha no palheiro".
 
 Assim, o benchmark avalia:
+
 - Robustez;
 - Generalização;
 - Sensibilidade a evasão;
@@ -126,6 +147,7 @@ A framework produz dois cenários experimentais complementares.
 | **B (Realista)** | 90% Legítimas / 10% Phishing | Simulação de tráfego real | False Positive Rate (FPR), Robustez |
 
 Os datasets encontram-se organizados em duas versões:
+
 - **Baseline (sem augmentation)**;
 - **Advanced (com augmentation adversarial)**.
 
@@ -155,6 +177,7 @@ A pipeline extrai atributos lexicais e estatísticos amplamente utilizados na li
  ┣ 📂 Dados intermediarios
  ┣ 📂 Dataset Final com aug
  ┣ 📂 Dataset Final sem aug
+
  ┣ 📂 scripts
  ┃ ┣ 📜 01_cleaning.py
  ┃ ┣ 📜 01b_augmentation_llm.py
@@ -169,5 +192,3 @@ A pipeline extrai atributos lexicais e estatísticos amplamente utilizados na li
  ┣ 📜 README.md
  ┣ 📜 .gitignore
  ┗ 📜 teste.py
-
-

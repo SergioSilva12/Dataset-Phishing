@@ -18,7 +18,18 @@ Para garantir validade estatística e rigor de nível de publicação (*Qualis A
 4. **Cenários de Validação Realistas:**
    - **Cenário A (Balanceado):** Distribuição 50/50 para extração de métricas justas de base matemática (Precisão, Recall).
    - **Cenário B (Desbalanceado):** Distribuição 10/90 no conjunto de teste, simulando o tráfego do mundo real e focando na análise da Taxa de Falsos Positivos.
+   
+## ⚙️ Arquitetura Proposta: Modelo em Cascata (Ativação Sob Demanda)
 
+Diferente de sistemas que submetem todo o tráfego a modelos pesados de Deep Learning, este projeto fundamenta-se em uma estratégia de **Modelo em Cascata**. Esta abordagem foca na eficiência computacional e na redução de latência:
+
+1.  **Camada de Triagem (Machine Learning Clássico):** Atua como o primeiro filtro. Algoritmos como *Random Forest* ou *SVM* processam as features lexicais extraídas (entropia, comprimento, etc.). Por serem computacionalmente leves, conseguem classificar URLs óbvias com baixíssimo custo de CPU.
+2.  **Ativação Sob Demanda (Deep Learning):** A arquitetura de Deep Learning (CNN/LSTM) só é invocada em casos de **baixa confiança** ou **incerteza** da camada de triagem. Isso permite que o poder de processamento pesado seja reservado para amostras complexas de phishing que tentam evadir assinaturas lexicais simples.
+
+### Benefícios do Modelo em Cascata:
+*   **Eficiência de Recursos:** Reduz drasticamente o custo de infraestrutura em ambientes de alto tráfego.
+*   **Baixa Latência:** A maioria das URLs é classificada em milissegundos pela primeira camada.
+*   **Robustez:** Mantém a alta precisão das Redes Neurais sem o gargalo de processar 100% do tráfego através delas.
 ## 🗂️ Estrutura do Repositório
 
 O projeto adota uma arquitetura modular ETL (Extract, Transform, Load) organizada da seguinte forma:

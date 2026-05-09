@@ -1,0 +1,22 @@
+{
+    "project": "Detec\u00e7\u00e3o de Phishing: ML vs DL",
+    "version": "1.0",
+    "generated_at": "2026-05-09 00:06:40",
+    "methodology": "Domain-Aware Temporal Split with Tranco Uniform Sampling",
+    "scenarios": {
+        "Scenario_A": {
+            "description": "Balanced 50/50",
+            "train_size": 81228
+        },
+        "Scenario_B": {
+            "description": "Imbalanced 10/90",
+            "test_size": 87040
+        }
+    },
+    "file_integrity_sha256": {
+        "FINAL_A_train.csv": "627dcf6941498397e52188101dadfc9e5045ebcb8f5f5df9a996d908d19349f7",
+        "FINAL_A_val.csv": "2d0b7e00cdabebbb93244a2c347c5335dba6302f1d77ba8e399fc0055141550c",
+        "FINAL_A_test.csv": "e1324813825398010747dbbba16479c638acc7357830ef6d4274c3721ca592eb",
+        "FINAL_B_test_real.csv": "0bade5e0411b457e05e0a8d4f70bdf4f00153f85f48ecaf3769301d683fa816f"
+    }
+}

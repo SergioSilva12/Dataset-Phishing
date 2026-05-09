@@ -1,8 +1,25 @@
+venv/
+.venv/
+env/
+bin/
+lib/
+develop-eggs/
+dist/
+eggs/
+installed.cfg
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
 
 *.csv
-*.zip
 *.json
-!dataset_metadata.json
-!4_dataset_final/dataset_metadata.json
-__pycache__/
-.ipynb_checkpoints/
+*.txt
+!README.md
+!README_DATASET.md
+
+Dataset_Final_TCC/
+Dataset_Splits_TCC/
+Dados intermediarios/
+

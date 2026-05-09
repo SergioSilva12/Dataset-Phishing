@@ -1,63 +1,58 @@
 import pandas as pd
 import os
+from sklearn.model_selection import train_test_split
 
-# Pega o caminho da pasta onde este script esta salvo
+# Caminhos
 PASTA_ATUAL = os.path.dirname(os.path.abspath(__file__))
-
-# Define o caminho do dataset mestre gerado no passo 03
-INPUT_CSV = os.path.join(PASTA_ATUAL, "Dataset_Final_TCC", "phishing_detection_benchmark.csv")
-
-# Define a pasta de destino para os splits
-OUTPUT_DIR = os.path.join(PASTA_ATUAL, "Dataset_Splits_TCC")
+INPUT_CSV = os.path.join(PASTA_ATUAL, "Dataset Final com aug", "phishing_detection_benchmark.csv")
+OUTPUT_DIR = os.path.join(PASTA_ATUAL, "Dataset Fianl Splits")
 
 def main():
-    print(f"Lendo benchmark em: {INPUT_CSV}")
-    
     if not os.path.exists(INPUT_CSV):
-        print("[ERRO] O arquivo benchmark nao foi encontrado. Rode o script 03 primeiro.")
+        print("[ERRO] Arquivo benchmark nao encontrado.")
         return
 
-    # Carrega o dataset mantendo a ordem original (importante para o time split)
     df = pd.read_csv(INPUT_CSV)
-    total_linhas = len(df)
+    print(f"Dataset carregado com {len(df)} amostras.")
+
+    # ==========================================================
+    # DIVISAO ESTRATIFICADA (Garante categorias em todos os sets)
+    # ==========================================================
     
-    print(f"[OK] Dataset carregado: {total_linhas} amostras.")
+    # 1. Separa 70% para Treino e 30% para o resto (Val + Teste)
+    # O parametro 'stratify' e o segredo: ele olha a coluna data_category
+    df_train, df_temp = train_test_split(
+        df, 
+        test_size=0.30, 
+        random_state=42, 
+        stratify=df['data_category'] 
+    )
 
-    # 1. Definição dos pontos de corte (70% | 15% | 15%)
-    indice_treino = int(total_linhas * 0.70)
-    indice_val = int(total_linhas * 0.85) # 70% + 15%
+    # 2. Divide os 30% restantes ao meio (15% Val / 15% Teste)
+    df_val, df_test = train_test_split(
+        df_temp, 
+        test_size=0.50, 
+        random_state=42, 
+        stratify=df_temp['data_category']
+    )
 
-    # 2. Divisao Temporal (Sem shuffle global antes do corte)
-    df_train = df.iloc[:indice_treino].copy()
-    df_val = df.iloc[indice_treino:indice_val].copy()
-    df_test = df.iloc[indice_val:].copy()
+    # Criar pasta de saida
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # 3. Embaralhamento (Shuffle) apenas dentro do conjunto de TREINO
-    # Isso ajuda o modelo a convergir sem vazar informacao do futuro (val/teste)
-    df_train = df_train.sample(frac=1, random_state=42).reset_index(drop=True)
-
-    # Cria a pasta de saida
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
-
-    # 4. Salvamento dos arquivos
+    # Salvar arquivos
     df_train.to_csv(os.path.join(OUTPUT_DIR, "train.csv"), index=False)
     df_val.to_csv(os.path.join(OUTPUT_DIR, "validation.csv"), index=False)
     df_test.to_csv(os.path.join(OUTPUT_DIR, "test.csv"), index=False)
 
-    # 5. Relatorio de Integridade para o Artigo
     print("\n" + "="*40)
-    print("DIVISAO TEMPORAL CONCLUIDA")
+    print("DIVISAO ESTRATIFICADA CONCLUIDA")
     print("="*40)
-    print(f"Treino (70%):     {len(df_train)} amostras")
-    print(f"Validacao (15%):  {len(df_val)} amostras")
-    print(f"Teste (15%):      {len(df_test)} amostras")
-    print("-" * 40)
-    print(f"Arquivos salvos em: {OUTPUT_DIR}")
+    print(f"Treino:     {len(df_train)} amostras")
+    print(f"Validacao:  {len(df_val)} amostras")
+    print(f"Teste:      {len(df_test)} amostras")
     
-    # Verifica se a coluna de classificacao esta correta no teste (Sua ideia!)
-    print("\nDistribuicao de categorias no conjunto de TESTE:")
-    print(df_test['data_category'].value_counts())
+    print("\nValidacao de Categoria no TREINO:")
+    print(df_train['data_category'].value_counts(normalize=True).map(lambda n: f'{n:.2%}'))
 
 if __name__ == "__main__":
     main()

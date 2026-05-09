@@ -152,17 +152,9 @@ A pipeline extrai atributos lexicais e estatísticos amplamente utilizados na li
 ```text
 📦 phishing-dataset-pipeline
  ┣ 📂 Dados Brutos
- ┃ ┗ 📜 Feeds originais (PhishTank / Tranco)
-
  ┣ 📂 Dados intermediarios
- ┃ ┗ 📜 CSVs processados e checkpoints do pipeline
-
  ┣ 📂 Dataset Final com aug
- ┃ ┗ 📜 Benchmark final contendo URLs adversariais
-
  ┣ 📂 Dataset Final sem aug
- ┃ ┗ 📜 Benchmark baseline sem augmentation
-
  ┣ 📂 scripts
  ┃ ┣ 📜 01_cleaning.py
  ┃ ┣ 📜 01b_augmentation_llm.py
@@ -178,36 +170,4 @@ A pipeline extrai atributos lexicais e estatísticos amplamente utilizados na li
  ┣ 📜 .gitignore
  ┗ 📜 teste.py
 
-# 👨‍💻 Autor
 
-<div align="center">
-
-## Sérgio Silva de Oliveira
-
-Estudante de Ciência da Computação — IFCE Campus Iguatu
-
-Pesquisador com foco em:
-
-🔹 Deep Learning  
-🔹 Segurança Cibernética  
-🔹 Detecção de Phishing  
-🔹 Robustez Adversarial  
-🔹 Machine Learning Aplicado
-
-</div>
-
----
-
-# 📚 Citação
-
-Caso este repositório contribua para sua pesquisa ou projeto acadêmico, considere citar este projeto e referenciar o Instituto Federal do Ceará (IFCE).
-
-```bibtex
-@misc{silva2026phishingbenchmark,
-  author       = {Sérgio Silva de Oliveira},
-  title        = {Temporal Phishing Detection Benchmark},
-  year         = {2026},
-  institution  = {Instituto Federal do Ceará (IFCE)},
-  note         = {Framework Experimental para Detecção de URLs Maliciosas e IA Adversarial},
-  url          = {https://github.com/SergioSilva12/Dataset-Phishing}
-}

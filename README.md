@@ -1,10 +1,10 @@
 # 🛡️ Pipeline Temporal para Detecção de Phishing
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
-![Machine Learning]
-![Deep Learning]
-![License]
-![Status](https://img.shields.io/badge/Status-Pesquisa%20Ativa-success.svg)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Artificial Intelligence](https://img.shields.io/badge/Artificial%20Intelligence-Research-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)
+![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Phishing%20Detection-DC143C?style=for-the-badge&logo=protonmail&logoColor=white)
+![Data Engineering](https://img.shields.io/badge/Data%20Engineering-Benchmark%20Pipeline-FF8C00?style=for-the-badge&logo=databricks&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active%20Research-228B22?style=for-the-badge)
 
 > **Framework Experimental Reproduzível para Pesquisa em Detecção de URLs Maliciosas, Robustez Temporal e IA Adversarial.**
 

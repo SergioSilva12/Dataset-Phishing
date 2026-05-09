@@ -23,8 +23,8 @@ Para garantir validade estatística e rigor de nível de publicação (*Qualis A
 
 Diferente de sistemas que submetem todo o tráfego a modelos pesados de Deep Learning, este projeto fundamenta-se em uma estratégia de **Modelo em Cascata**. Esta abordagem foca na eficiência computacional e na redução de latência:
 
-1.  **Camada de Triagem (Machine Learning Clássico):** Atua como o primeiro filtro. Algoritmos como *Random Forest* ou *SVM* processam as features lexicais extraídas (entropia, comprimento, etc.). Por serem computacionalmente leves, conseguem classificar URLs óbvias com baixíssimo custo de CPU.
-2.  **Ativação Sob Demanda (Deep Learning):** A arquitetura de Deep Learning (CNN/LSTM) só é invocada em casos de **baixa confiança** ou **incerteza** da camada de triagem. Isso permite que o poder de processamento pesado seja reservado para amostras complexas de phishing que tentam evadir assinaturas lexicais simples.
+1.  **Camada de Triagem (Machine Learning Clássico):** Atua como o primeiro filtro. Algoritmos como *Random Forest* ou *XGBoost* processam as features lexicais extraídas (entropia, comprimento, etc.). Por serem computacionalmente leves, conseguem classificar URLs óbvias com baixíssimo custo de CPU.
+2.  **Ativação Sob Demanda (Deep Learning):** A arquitetura de Deep Learning (CNN ou BiGRU-Attention) só é invocada em casos de **baixa confiança** ou **incerteza** da camada de triagem. Isso permite que o poder de processamento pesado seja reservado para amostras complexas de phishing que tentam evadir assinaturas lexicais simples.
 
 ### Benefícios do Modelo em Cascata:
 *   **Eficiência de Recursos:** Reduz drasticamente o custo de infraestrutura em ambientes de alto tráfego.

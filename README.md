@@ -4,7 +4,7 @@
 ![Academic Project](https://img.shields.io/badge/Status-Pesquisa%20Ativa-success?style=for-the-badge)
 
 ## 📌 Sobre o Projeto
-Este repositório contém a pipeline de Engenharia de Dados desenvolvida para estruturar um dataset robusto de URLs legítimas e maliciosas (Phishing). O objetivo primário dos dados gerados é alimentar experimentos acadêmicos que comparam a eficácia de algoritmos clássicos de **Machine Learning** (Random Forest, SVM) frente a arquiteturas de **Deep Learning** (CNNs, LSTMs).
+Este repositório contém a pipeline de Engenharia de Dados desenvolvida para estruturar um dataset robusto de URLs legítimas e maliciosas (Phishing). O objetivo primário dos dados gerados é alimentar experimentos acadêmicos que comparam a eficácia de algoritmos clássicos de **Machine Learning** (XGBoost) frente a arquiteturas de **Deep Learning** (BiGRU-Attention).
 
 A metodologia empregada foca em resolver falhas comuns na literatura de cibersegurança, como o viés de popularidade, o vazamento de dados (*Data Leakage*) e a degradação de conceito temporal (*Concept Drift*).
 

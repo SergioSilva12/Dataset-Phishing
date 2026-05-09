@@ -1,151 +1,149 @@
-# 🛡️ Pipeline Temporal para Detecção de Phishing  
-### Framework Experimental de Engenharia de Dados para Pesquisa em Detecção de URLs Maliciosas
+# 🛡️ Pipeline Temporal para Detecção de Phishing
+
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange.svg)
+![Deep Learning](https://img.shields.io/badge/Deep%20Learning-TensorFlow%2FKeras-red.svg)
+![License](https://img.shields.io/badge/License-Academic%20MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Pesquisa%20Ativa-success.svg)
+
+> **Framework Experimental Reproduzível para Pesquisa em Detecção de URLs Maliciosas, Robustez Temporal e IA Adversarial.**
 
 ---
 
 # 📌 Visão Geral
 
-Este repositório contém uma pipeline reproduzível de Engenharia de Dados desenvolvida para a construção de datasets de alta qualidade voltados à pesquisa em detecção de URLs de phishing.
+Este repositório apresenta uma pipeline completa de Engenharia de Dados desenvolvida para construção de benchmarks científicos voltados à detecção de URLs de phishing.
 
-O projeto foi concebido para sustentar experimentos acadêmicos rigorosos envolvendo a comparação entre:
+O projeto foi concebido para sustentar experimentos acadêmicos rigorosos envolvendo:
 
-- algoritmos clássicos de Machine Learning;
-- arquiteturas profundas de Deep Learning;
-- estratégias híbridas de inferência adaptativa para sistemas de cibersegurança.
+- Algoritmos clássicos de **Machine Learning**;
+- Arquiteturas profundas de **Deep Learning**;
+- Estratégias híbridas de **Inferência Adaptativa**;
+- Avaliação de robustez contra técnicas modernas de evasão lexical.
 
-A pipeline foi projetada especificamente para mitigar limitações metodológicas frequentemente observadas na literatura de detecção de phishing, incluindo:
+A framework foi projetada especificamente para mitigar limitações metodológicas frequentemente observadas na literatura, incluindo:
 
 - *Data Leakage*;
 - *Concept Drift* temporal;
-- memorização de domínios;
-- viés de popularidade em URLs legítimas;
-- protocolos irreais de avaliação experimental.
-
-Os datasets gerados são adequados para pesquisas em:
-
-- Machine Learning;
-- Deep Learning;
-- Edge AI;
-- Inferência Adaptativa;
-- Sistemas Inteligentes de Cibersegurança.
+- Memorização de domínios;
+- Viés de popularidade;
+- Protocolos irreais de avaliação experimental;
+- Ausência de cenários adversariais.
 
 ---
 
 # 🔬 Metodologia Experimental
 
-Para garantir rigor científico, validade estatística e reprodutibilidade experimental, a pipeline implementa um protocolo multicamadas fundamentado em práticas modernas de avaliação em cibersegurança.
+Para garantir rigor científico, validade estatística e reprodutibilidade, a pipeline implementa um protocolo multicamadas fundamentado em práticas modernas de cibersegurança.
 
 ---
 
 ## 1️⃣ Prevenção de *Data Leakage* com Separação por Domínio
 
-Estratégias tradicionais de divisão aleatória frequentemente introduzem vazamento de informação ao permitir que URLs pertencentes ao mesmo domínio apareçam simultaneamente nos conjuntos de treino e teste.
+Estratégias tradicionais de divisão aleatória frequentemente introduzem vazamento de informação entre treino e teste.
 
-Para mitigar esse problema, a pipeline aplica uma estratégia de *Domain-Aware Split*, garantindo isolamento estrito entre domínios presentes em diferentes subconjuntos experimentais.
+Para mitigar esse problema, a pipeline aplica uma estratégia de **Domain-Aware Split**, garantindo isolamento estrito entre domínios nos subconjuntos experimentais.
 
-Essa abordagem assegura que os modelos aprendam características generalizáveis de phishing, em vez de memorizar padrões específicos de determinados domínios.
+Isso assegura que os modelos aprendam padrões generalizáveis de phishing, em vez de apenas memorizar URLs previamente observadas.
 
 ---
 
 ## 2️⃣ Protocolo de Isolamento Temporal
 
-A pipeline adota uma estratégia cronológica de particionamento que simula condições reais de implantação operacional.
+A pipeline adota um particionamento cronológico que simula condições reais de implantação (*Zero-Day Detection*).
 
-Os modelos são treinados utilizando campanhas históricas de phishing e avaliados sobre ameaças futuras inéditas, reproduzindo o comportamento de sistemas reais como:
-
-- Firewalls;
-- Secure Web Gateways;
-- Sistemas Anti-Phishing;
-- Motores de detecção *Zero-Day*.
-
-O protocolo temporal reduz vieses otimistas causados por sobreposição cronológica e permite avaliar robustez frente ao fenômeno de *Concept Drift*.
+Os modelos são treinados utilizando campanhas históricas e avaliados sobre ameaças futuras inéditas, reduzindo vieses otimistas e avaliando a robustez frente ao fenômeno de *Concept Drift*.
 
 ---
 
 ## 3️⃣ Estratégia de Amostragem de URLs Legítimas
 
-Em vez de utilizar apenas os domínios mais populares do ranking da Tranco List, a pipeline aplica amostragem aleatória uniforme sobre toda a distribuição de URLs legítimas.
+Em vez de utilizar apenas o topo do ranking da Tranco List, aplicou-se uma estratégia de amostragem uniforme distribuída sobre toda a base de domínios legítimos.
 
-Essa abordagem reduz:
-
-- viés de popularidade;
-- viés lexical;
-- simplificações artificiais decorrentes de domínios excessivamente conhecidos.
-
-Consequentemente, os datasets gerados aproximam-se de forma mais realista da diversidade estrutural da web pública.
+Essa abordagem reduz vieses de popularidade e aproxima o benchmark da diversidade estrutural observada na web pública real.
 
 ---
 
-## 4️⃣ Cenários Realistas de Avaliação
+# 🧬 Data Augmentation Adversarial
+
+A pipeline incorpora um módulo avançado de geração sintética de URLs maliciosas inspirado em estratégias reais utilizadas por campanhas modernas de phishing.
+
+---
+
+## 🎯 Motivação
+
+Sistemas tradicionais de detecção frequentemente sofrem degradação de desempenho quando confrontados com URLs inéditas ou variantes lexicalmente modificadas.
+
+Esse problema se tornou ainda mais relevante com o crescimento de ferramentas automatizadas baseadas em IA generativa, capazes de produzir milhares de variações maliciosas para evasão de filtros de segurança.
+
+Dessa forma, o módulo de *Data Augmentation Adversarial* foi desenvolvido com três objetivos principais:
+
+- Simular estratégias modernas de evasão lexical;
+- Reduzir o viés de estagnação do dataset;
+- Avaliar a capacidade de generalização dos modelos diante de mutações sintéticas inéditas.
+
+---
+
+## ⚙️ Estratégias de Geração Sintética
+
+As URLs adversariais são geradas preservando a estrutura semântica original da URL enquanto realizam mutações controladas no domínio.
+
+As técnicas implementadas incluem:
+
+| Técnica | Descrição |
+| :--- | :--- |
+| **Homoglyph Attacks** | Substituição visual de caracteres (`o → 0`, `l → 1`) |
+| **Typosquatting** | Inserção/remoção de caracteres simulando erros humanos |
+| **Subdomain Injection** | Inclusão de termos como `login`, `secure`, `verify` |
+| **Hyphenation Attacks** | Inserção estratégica de hífens |
+| **TLD Manipulation** | Alteração de extensões para `.xyz`, `.site`, `.online` |
+
+Todas as URLs geradas passam por validação estrutural e controle de duplicidade antes de serem incorporadas ao benchmark.
+
+---
+
+## 📊 Proporção Estratégica
+
+As URLs sintéticas representam aproximadamente **0.4%** do conjunto final de teste.
+
+Essa baixa proporção foi intencionalmente adotada para simular o comportamento real da web, onde ataques adversariais sofisticados representam uma pequena fração do tráfego total, funcionando como uma "agulha no palheiro".
+
+Assim, o benchmark avalia:
+- Robustez;
+- Generalização;
+- Sensibilidade a evasão;
+- Capacidade de detecção de ataques inéditos.
+
+---
+
+# 📊 Cenários de Avaliação
 
 A framework produz dois cenários experimentais complementares.
 
-### 🔹 Cenário A — Avaliação Balanceada
+| Cenário | Distribuição | Objetivo Principal | Métricas Foco |
+| :--- | :--- | :--- | :--- |
+| **A (Balanceado)** | 50% Legítimas / 50% Phishing | Comparação justa entre arquiteturas | Precision, Recall, F1-Score, AUC-PR |
+| **B (Realista)** | 90% Legítimas / 10% Phishing | Simulação de tráfego real | False Positive Rate (FPR), Robustez |
 
-- 50% URLs legítimas
-- 50% URLs de phishing
+Os datasets encontram-se organizados em duas versões:
+- **Baseline (sem augmentation)**;
+- **Advanced (com augmentation adversarial)**.
 
-Esse cenário é destinado à:
-
-- comparação justa entre arquiteturas;
-- extração controlada de métricas;
-- análise da capacidade discriminativa dos modelos.
-
-Principais métricas avaliadas:
-
-- Precisão (*Precision*);
-- Revocação (*Recall*);
-- F1-Score;
-- AUC-PR.
-
----
-
-### 🔹 Cenário B — Avaliação em Cenário Real
-
-- 90% URLs legítimas
-- 10% URLs de phishing
-
-Esse cenário reproduz distribuições observadas em ambientes reais de tráfego web e prioriza a análise de:
-
-- Taxa de Falsos Positivos (*False Positive Rate*);
-- Robustez operacional;
-- Viabilidade prática de implantação.
+Isso permite estudos de ablação e análise do impacto do augmentation sobre a generalização dos modelos.
 
 ---
 
 # ⚙️ Engenharia de Features
 
-A pipeline extrai atributos lexicais e estatísticos amplamente utilizados na literatura de detecção de phishing.
+A pipeline extrai atributos lexicais e estatísticos amplamente utilizados na literatura científica.
 
 | Feature | Descrição |
-|---|---|
-| Comprimento da URL | Quantidade total de caracteres |
-| Entropia de Shannon | Mede aleatoriedade textual |
-| Presença de IP | Detecta uso de endereços IP brutos |
-| Número de Subdomínios | Quantidade de níveis hierárquicos |
-| Extração de Domínio | Normalização de domínio raiz |
-| Metadados Temporais | Informações cronológicas das campanhas |
-
----
-
-# 🧪 Protocolo de Reprodutibilidade
-
-Para garantir experimentação determinística e reproduzível, a framework incorpora:
-
-- controle global de sementes aleatórias (*random seeds*);
-- geração determinística de datasets;
-- hashes SHA-256 para integridade;
-- arquitetura ETL modular;
-- versionamento de metadados;
-- rastreabilidade temporal completa.
-
-Todos os datasets gerados são acompanhados de arquivos estruturados de metadados contendo:
-
-- janelas temporais de coleta;
-- distribuições de classes;
-- estatísticas de pré-processamento;
-- taxas de remoção de duplicatas;
-- distribuições das features extraídas.
+| :--- | :--- |
+| `url_length` | Quantidade total de caracteres na URL |
+| `entropy` | Entropia de Shannon da string |
+| `has_ip` | Detecta uso de endereços IP no domínio |
+| `num_subdomains` | Quantidade de subdomínios |
+| `domain_extraction` | Normalização do domínio raiz |
 
 ---
 
@@ -153,78 +151,63 @@ Todos os datasets gerados são acompanhados de arquivos estruturados de metadado
 
 ```text
 📦 phishing-dataset-pipeline
- ┣ 📂 1_scripts
+ ┣ 📂 Dados Brutos
+ ┃ ┗ 📜 Feeds originais (PhishTank / Tranco)
+
+ ┣ 📂 Dados intermediarios
+ ┃ ┗ 📜 CSVs processados e checkpoints do pipeline
+
+ ┣ 📂 Dataset Final com aug
+ ┃ ┗ 📜 Benchmark final contendo URLs adversariais
+
+ ┣ 📂 Dataset Final sem aug
+ ┃ ┗ 📜 Benchmark baseline sem augmentation
+
+ ┣ 📂 scripts
  ┃ ┣ 📜 01_cleaning.py
- ┃ ┃ ┗━ Normalização, remoção de duplicatas e pré-processamento
- ┃ ┣ 📜 02_feature_engineering.py
- ┃ ┃ ┗━ Extração de atributos lexicais e estatísticos
- ┃ ┣ 📜 03_temporal_split.py
- ┃ ┃ ┗━ Particionamento cronológico com isolamento por domínio
+ ┃ ┣ 📜 01b_augmentation_llm.py
+ ┃ ┣ 📜 02_feature.py
+ ┃ ┣ 📜 02b_feature_synthetic.py
+ ┃ ┣ 📜 03_create_benchmark.py
+ ┃ ┣ 📜 03_split.py
  ┃ ┣ 📜 04_scenarios.py
- ┃ ┃ ┗━ Construção dos cenários balanceado e realista
- ┃ ┗ 📜 05_metadata.py
- ┃   ┗━ Geração de metadados e hashes SHA-256
- ┃
- ┣ 📂 2_dados_brutos
- ┃ ┗━ Bases originais (PhishTank / Tranco)
- ┃
- ┣ 📂 3_dados_intermediarios
- ┃ ┗━ Checkpoints e artefatos processados
- ┃
- ┣ 📂 4_dataset_final
- ┃ ┗━ Datasets finais prontos para treinamento e avaliação
- ┃
- ┗ 📜 README.md
-```
+ ┃ ┣ 📜 04_time_split_stratified.py
+ ┃ ┗ 📜 05_metaData.py
+
+ ┣ 📜 README.md
+ ┣ 📜 .gitignore
+ ┗ 📜 teste.py
+
+# 👨‍💻 Autor
+
+<div align="center">
+
+## Sérgio Silva de Oliveira
+
+Estudante de Ciência da Computação — IFCE Campus Iguatu
+
+Pesquisador com foco em:
+
+🔹 Deep Learning  
+🔹 Segurança Cibernética  
+🔹 Detecção de Phishing  
+🔹 Robustez Adversarial  
+🔹 Machine Learning Aplicado
+
+</div>
 
 ---
 
-# 📊 Fontes dos Dados
+# 📚 Citação
 
-## URLs de Phishing
+Caso este repositório contribua para sua pesquisa ou projeto acadêmico, considere citar este projeto e referenciar o Instituto Federal do Ceará (IFCE).
 
-- PhishTank
-
-## URLs Legítimas
-
-- Tranco List
-
----
-
-# ⚠️ Ameaças à Validade
-
-Apesar dos mecanismos rigorosos de controle experimental, algumas limitações permanecem:
-
-- dependência de feeds públicos de phishing;
-- obsolescência temporal das campanhas;
-- representatividade parcial do tráfego legítimo da web;
-- possíveis mudanças distribucionais ao longo do tempo.
-
-Essas limitações são explicitamente documentadas visando transparência metodológica e integridade científica.
-
----
-
-# 🚀 Aplicações de Pesquisa
-
-Os datasets gerados são adequados para pesquisas envolvendo:
-
-- Machine Learning clássico;
-- Deep Learning;
-- Generalização temporal;
-- Detecção de phishing *Zero-Day*;
-- Sistemas de Edge AI;
-- Inferência Adaptativa;
-- Classificação Seletiva;
-- Benchmarking computacional de modelos leves.
-
----
-
-# 📖 Citação
-
-Caso este repositório contribua para sua pesquisa, considere citá-lo adequadamente em publicações acadêmicas.
-
----
-
-# 📜 Licença
-
-Este projeto é destinado exclusivamente para fins acadêmicos e de pesquisa.
+```bibtex
+@misc{silva2026phishingbenchmark,
+  author       = {Sérgio Silva de Oliveira},
+  title        = {Temporal Phishing Detection Benchmark},
+  year         = {2026},
+  institution  = {Instituto Federal do Ceará (IFCE)},
+  note         = {Framework Experimental para Detecção de URLs Maliciosas e IA Adversarial},
+  url          = {https://github.com/SergioSilva12/Dataset-Phishing}
+}
